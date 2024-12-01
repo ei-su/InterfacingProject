@@ -1,12 +1,15 @@
 Average Run Times:
 
 2^20 in C = 2.0ms
+
 2^20 in Assembly = 2.0ms
 
 2^24 in C = 30.6ms
+
 2^24 in Assembly = 32.0ms
 
 2^29 in C = 88481.0ms
+
 2^29 in Assembly = 73143.0ms
 
 Comparison and Analysis
