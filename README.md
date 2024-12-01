@@ -1,4 +1,5 @@
 Average Run Times:
+
 2^20 in C = 2.0ms
 2^20 in Assembly = 2.0ms
 
