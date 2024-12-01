@@ -39,6 +39,21 @@ int main() {
 		zArrayInC[i] = 0.0;
 		zArrayInx64[i] = 0.0;
 	}
+
+	printf("\nx ~> ");
+	for (int i = 0; i < 10; i++) {
+		printf("%f", x[i]);
+		if (i != 9) {
+			printf(", ");
+		}
+	}
+	printf("\ny ~> ");
+	for (int i = 0; i < 10; i++) {
+		printf("%f", y[i]);
+		if (i != 9) {
+			printf(", ");
+		}
+	}
 	
 	//~~~~~~~~~~ C language ~~~~~~~~~~
 	// call C function
@@ -46,7 +61,7 @@ int main() {
 	cLangSAXPYfunction(ARRAY_SIZE, x, y, zArrayInC, a);
 	end = clock();
 	time_taken = ((double)(end - start) * 1000 / CLOCKS_PER_SEC);
-	printf("Time (in C, as ms) = %lf ms\n", time_taken);
+	printf("\n\nTime (in C, as ms) = %lf ms\n", time_taken);
 	// sanity check by printing
 	for (int i = 0; i < 10; i++) {
 	printf("new value of Z[%d] in C = %f\n", i, zArrayInC[i]);
