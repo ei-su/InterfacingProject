@@ -11,9 +11,9 @@ void cLangSAXPYfunction(long long int n, float* x, float* y, float* z, float a) 
 }
 
 int main() {
-	unsigned long long int ARRAY_SIZE = 1048576; // 2^20
+	/*unsigned long long int ARRAY_SIZE = 1048576;*/ // 2^20
 	/*unsigned long long int ARRAY_SIZE = 16777216;*/ // 2^24
-	/*unsigned long long int ARRAY_SIZE = 1073741824;*/ // 2^30
+	unsigned long long int ARRAY_SIZE = 1073741824; // 2^30
 	unsigned long long int ARRAY_BYTES = ARRAY_SIZE * sizeof(float);
 	// timer variable
 	clock_t start, end;
@@ -34,8 +34,8 @@ int main() {
 
 	// initialize array
 	for (int i = 0; i < ARRAY_SIZE; i++) {
-		x[i] = (float)rand() / (RAND_MAX / 20.0) - 10.0;
-		y[i] = (float)rand() / (RAND_MAX / 20.0) - 10.0;
+		x[i] = (float)rand() / (RAND_MAX / 20.0f) - 10.0f;
+		y[i] = (float)rand() / (RAND_MAX / 20.0f) - 10.0f;
 		zArrayInC[i] = 0.0;
 		zArrayInx64[i] = 0.0;
 	}
