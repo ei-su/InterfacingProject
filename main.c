@@ -93,6 +93,9 @@ int main() {
 			break;
 		}
 	}
+	
+	free(zArrayInC);
+	free(zArrayInx64);
 
-		return 0;
+	return 0;
 }
