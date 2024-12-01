@@ -11,8 +11,8 @@ void cLangSAXPYfunction(long long int n, float* x, float* y, float* z, float a) 
 }
 
 int main() {
-	/*unsigned long long int ARRAY_SIZE = 1048576;*/ // 2^20
-	unsigned long long int ARRAY_SIZE = 16777216; // 2^24
+	unsigned long long int ARRAY_SIZE = 1048576; // 2^20
+	/*unsigned long long int ARRAY_SIZE = 16777216;*/ // 2^24
 	/*unsigned long long int ARRAY_SIZE = 1073741824;*/ // 2^30
 	unsigned long long int ARRAY_BYTES = ARRAY_SIZE * sizeof(float);
 	// timer variable
@@ -67,15 +67,16 @@ int main() {
 	//~~~~~~~~~~ Correctness Checker ~~~~~~~~~~
 	for (int i = 0; i < ARRAY_SIZE; i++) {
 		if (zArrayInC[i] == zArrayInx64[i]) {
+			if (i == ARRAY_SIZE - 1)
+				printf("\n\nThe x86-64 kernel output is correct.\n");
 			continue;
 		}
 		else {
-			printf("\n\nIncorrect outputs for the C and x86-64 kernels.");
+			printf("\n\nThe x86-64 kernel output is incorrect.");
 			printf("\nzArrayInC[%d] = %f", i, zArrayInC[i]);
 			printf("\nzArrayInx64[%d] = %f\n", i, zArrayInx64[i]);
 			break;
 		}
-
 	}
 
 		return 0;
