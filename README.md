@@ -15,7 +15,9 @@
 **Comparison and Analysis**
 
 2^20: Both C and Assembly took 2.0ms, meaning there is no significant performance difference for small dataset sizes. The overhead from function calls and loop execution in both C and Assembly is negligible for this scale.
+
 2^24: The Assembly implementation is slightly slower (by 1.4ms, about 4.6%). This could be due to additional overhead in the loop control or unoptimized memory access in the Assembly code. For mid-sized datasets, the C compiler generates efficient machine code that rivals handwritten Assembly in performance, especially with optimizations enabled.
+
 2^29: Observation: The Assembly implementation is significantly faster (by 15338ms, approximately 17.3%). For large dataset sizes, Assembly performs better because it can be tailored to avoid unnecessary overhead, use registers effectively, and optimize memory access patterns.
 
 **Conclusion**
