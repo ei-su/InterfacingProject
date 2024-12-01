@@ -17,10 +17,10 @@ L1:
 
     mulss   xmm2, xmm1             ; xmm2 = a * x[i]
     addss   xmm2, xmm3             ; xmm2 = (a * x[i]) + y[i]
-    movss   [r9 + rbx], xmm2       ; move result to 5th param (z)
+    movss   [r9 + rbx], xmm2       ; store result at z[i]
  
-    add rbx, 4
-    loop      L1                   ; loop until RCX is zero  
+    add rbx, 4                     ; increment counter
+    loop L1                        ; loop until rcx is zero  
     
     pop rbp
     ret
